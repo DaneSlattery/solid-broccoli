@@ -1,0 +1,14 @@
+//main.cpp
+#include<iostream>
+#include"hello.h"
+
+using namespace std;
+
+int main()
+{
+	helpme();
+ 	cout << "wtf" << endl;
+    return 0;
+}
+
+
