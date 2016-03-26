@@ -1,6 +1,7 @@
 //main.cpp
 #include<iostream>
-#include"cell.h"
+#include "cell.h"
+#include "grid.h"
 
 using namespace std;
 
