@@ -1,10 +1,17 @@
 //cell.cpp
-#include"hello.h"
+#include"cell.h"
 #include<iostream>
 
 using namespace std;
 
-void helpme()
+Cell::Cell(int x, int y)
 {
-    cout << "I have been called" << endl;
+	m_width = x;
+	m_depth = y;
+	cout << "Cell Constructor called, width = " << m_width << ", depth = " << m_depth << "." << endl;
+}
+
+void Cell::Debug()
+{
+	cout << m_width << " " << m_depth << endl;
 }
