@@ -6,7 +6,8 @@ SOURCES=$(shell find $(SRCDIR) -type f -name *.cpp)  #all .cpp files in ./src
 OBJECTS=$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.cpp=.o)) #all .o files in ./build
 BUILDDIR=build
 SRCDIR=src
-INC=-I include
+BINDIR=bin
+INC=
 EXEC=bin/snake
 
 all: $(EXEC)
@@ -14,11 +15,12 @@ all: $(EXEC)
 #should take in all object files
 $(EXEC): $(OBJECTS)
 	@echo " Linking..."
-	@mkdir -p bin
+	@mkdir -p $(BINDIR)
 	$(CC) $^ -o $@
 	
 #should take in all cpp files    
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
+	@echo " Building..."
 	@mkdir -p $(BUILDDIR)
 	$(CC) $(CFLAGS) $(INC) -c -o $@ $<
     

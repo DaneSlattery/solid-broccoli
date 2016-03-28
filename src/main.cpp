@@ -1,14 +1,15 @@
 //main.cpp
-#include<iostream>
-#include "cell.h"
+#include <iostream>
 #include "grid.h"
 
 using namespace std;
 
 int main()
 {
-	Cell cell(1,2);
+	Grid newGrid(10,10);
+	//newGrid.RandomiseFood();
  	//cell.Debug();
+ 	cout << "Test" << endl;
     return 0;
 }
 
