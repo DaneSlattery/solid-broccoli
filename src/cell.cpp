@@ -10,7 +10,7 @@ Cell::Cell() //default constructor
 	iY = -1;
 	bFood = false;
 	// below is a debug call
-	cout << "Cell Default Constructor called, location " << iX << ", " << iY << ". Food? " << bFood << endl;
+//	cout << "Cell Default Constructor called, location " << iX << ", " << iY << ". Food? " << bFood << endl;
 }
 
 Cell::Cell(int cx, int cy) //init constructor
@@ -18,8 +18,8 @@ Cell::Cell(int cx, int cy) //init constructor
 	iX = cx;
 	iY = cy;
 	bFood = false;
-	// below is a debug call
-	cout << iX << "," << iY << " ";
+	// below is a useful debug call
+//	cout << iX << "," << iY << " ";
 }
 
 void Cell::SetFood(bool fbFood)

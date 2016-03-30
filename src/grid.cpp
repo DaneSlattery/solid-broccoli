@@ -14,7 +14,6 @@ Grid::Grid(int cWidth, int cDepth) // init constructor
 	for (int row = 0; row < iWidth; row++)
 	{
 		v2CellArray.push_back(std::vector<Cell>());
-		cout << endl;
 		for (int column = 0; column < iDepth; column++)
 		{
 			v2CellArray[row].push_back(Cell(column,row));
@@ -44,17 +43,16 @@ void Grid::EatFood()
 
 void Grid::RenderField()
 {
-
 	for (int i = 0; i < iWidth; i++)
 	{
 		cout << endl;
 		for (int j = 0; j < iDepth; j++)
 		{
-			// if (v2CellArray[i][j].isFood())
-			// 	cout << "@ ";
-			// else 
-			// 	cout << "_ "; 
-			cout << v2CellArray.at(i).at(j).iX << "," << v2CellArray.at(i).at(j).iY << " ";
+			 if (v2CellArray[i][j].isFood())
+			 	cout << "x ";
+			 else 
+			 	cout << "o "; 
+			
 		}
 	}
 	cout << endl;

@@ -25,20 +25,18 @@ int main()
 	cout << "Grid Width = " << iGridWidth << " ;Grid Depth = " << iGridDepth << endl;
 	Grid newGrid(iGridWidth,iGridDepth);
 
+	newGrid.RandomiseFood();
+	newGrid.RenderField();
+
+	//init complete
+//testing game loop
+	for (int k = 0; k < 4; k++)
+	{
+		newGrid.EatFood();
 		newGrid.RandomiseFood();
 		newGrid.RenderField();
 		sleep(1);
-		newGrid.EatFood();
-
-	//init complete
-
-	// for (int k = 0; k < 10; k++)
-	// {
-	// 	newGrid.RandomiseFood();
-	// 	newGrid.RenderField();
-	// 	sleep(1);
-	// 	newGrid.EatFood();
-	// }
+	}
 	//game loop here
 	while (true)
 	{
