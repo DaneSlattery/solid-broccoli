@@ -1,42 +1,61 @@
 //grid.cpp
 // the grid class is a 2D array of cells, with a variable size.
-#include <iostream>
 #include "grid.h"
 
 using namespace std;
 
-Grid::Grid(int width, int depth) 
+Grid::Grid(int cWidth, int cDepth) // init constructor
 {
-	m_size_width = width;
-	m_size_depth = depth;
+	iWidth = cWidth;
+	iDepth = cDepth;
 
-	//m_cell_array.resize(m_size_width);
-	//for (int i = 0; i < m_size_width; i++)
-	//	m_cell_array[i].resize(m_size_depth);
-	for (int row = 0; row < m_size_width; row++)
+	cout << "Top Left is 0(width),0(depth)" << endl;
+
+	for (int row = 0; row < iWidth; row++)
 	{
-		std::vector<Cell> newColumn;
-		m_cell_array.push_back(newColumn);
-		for (int column = 0; column < m_size_depth; column++)
+		v2CellArray.push_back(std::vector<Cell>());
+		cout << endl;
+		for (int column = 0; column < iDepth; column++)
 		{
-			m_cell_array.at(row).push_back(Cell(row,column));
+			v2CellArray[row].push_back(Cell(column,row));
 		}
 	}
-
-	// for (int i = 0; i < m_size_width; i++)
-	// {
-	// 	for (int j = 0; j < m_size_depth; j++)
-	// 	{
-	// 		//m_cell_array(m_size_width, std::vector<Cell> (m_size_depth, Cell(i,j)));
-	// 		m_cell_array[i][j] = Cell(i, j); // this is a static implementation
-	// 	}
-	// }
-	cout << "Top Left is 0(width),0(depth)" << endl;
-	
-	cout << "Grid Constructor called, width = " << m_size_width << ", depth = " << m_size_depth << "." << endl;
+	// below is a debug call
+	//cout << "Grid Constructor called, width = " << iWidth << ", depth = " << iDepth << "." << endl;
 }
 
-void Grid::RandomiseFood()
+void Grid::RandomiseFood() 	//function to randomise position of food on empty cell
 {
-	cout << "Food placed at: " << endl;
+	//init. random seed
+	srand(time(NULL));
+
+	//generate random x and random y position and set the cell to have food
+	iFoodX = rand() % (iWidth-1); // from 0 to iWidth-1 (array is 0 indexed)
+	iFoodY = rand() % (iDepth-1); // from 0 to iDepth-1 
+
+	v2CellArray[iFoodX][iFoodY].SetFood(true);
+	cout << "Food placed at: " << iFoodX << "; " << iFoodY << endl;
+}
+
+void Grid::EatFood()
+{
+	v2CellArray[iFoodX][iFoodY].SetFood(false);
+}
+
+void Grid::RenderField()
+{
+
+	for (int i = 0; i < iWidth; i++)
+	{
+		cout << endl;
+		for (int j = 0; j < iDepth; j++)
+		{
+			// if (v2CellArray[i][j].isFood())
+			// 	cout << "@ ";
+			// else 
+			// 	cout << "_ "; 
+			cout << v2CellArray.at(i).at(j).iX << "," << v2CellArray.at(i).at(j).iY << " ";
+		}
+	}
+	cout << endl;
 }

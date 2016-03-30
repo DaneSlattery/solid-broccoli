@@ -4,18 +4,30 @@
 
 using namespace std;
 
-Cell::Cell()
+Cell::Cell() //default constructor
 {
-	m_width = -1;
-	m_depth = -1;
-	m_food = false;
-	cout << "Cell Default Constructor called, location " << m_width << ", " << m_depth << ". Food? " << m_food << endl;
+	iX = -1;
+	iY = -1;
+	bFood = false;
+	// below is a debug call
+	cout << "Cell Default Constructor called, location " << iX << ", " << iY << ". Food? " << bFood << endl;
 }
 
-Cell::Cell(int x, int y)
+Cell::Cell(int cx, int cy) //init constructor
 {
-	m_width = x;
-	m_depth = y;
-	m_food = false;
-	cout << "Cell Constructor called, location " << m_width << ", " << m_depth << ". Food? " << m_food << endl;
+	iX = cx;
+	iY = cy;
+	bFood = false;
+	// below is a debug call
+	cout << iX << "," << iY << " ";
+}
+
+void Cell::SetFood(bool fbFood)
+{
+	bFood = fbFood;
+}
+
+bool Cell::isFood()
+{
+	return bFood;
 }
