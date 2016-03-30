@@ -4,12 +4,10 @@
 
 using namespace std;
 
-Grid::Grid(int cWidth, int cDepth) // init constructor
+Grid::Grid(int cWidth, int cDepth) 	// init constructor
 {
 	iWidth = cWidth;
 	iDepth = cDepth;
-
-	cout << "Top Left is 0(width),0(depth)" << endl;
 
 	for (int row = 0; row < iWidth; row++)
 	{
@@ -29,19 +27,25 @@ void Grid::RandomiseFood() 	//function to randomise position of food on empty ce
 	srand(time(NULL));
 
 	//generate random x and random y position and set the cell to have food
-	iFoodX = rand() % (iWidth-1); // from 0 to iWidth-1 (array is 0 indexed)
-	iFoodY = rand() % (iDepth-1); // from 0 to iDepth-1 
+	iFoodX = rand() % (iWidth); // from 0 to iWidth-1 (array is 0 indexed)
+	iFoodY = rand() % (iDepth); // from 0 to iDepth-1 
 
 	v2CellArray[iFoodX][iFoodY].SetFood(true);
-	cout << "Food placed at: " << iFoodX << "; " << iFoodY << endl;
+	//cout << "Food placed at: " << iFoodX << "; " << iFoodY << endl;
 }
 
-void Grid::EatFood()
+void Grid::EatFood() 		// eat the food at iFoodX and Y
 {
 	v2CellArray[iFoodX][iFoodY].SetFood(false);
 }
 
-void Grid::RenderField()
+void Grid::RenderField()	//render the field as below
+/* 
+	o o o o 
+   	o o o o
+   	o o o o
+   	x o o o
+*/
 {
 	for (int i = 0; i < iWidth; i++)
 	{
@@ -57,3 +61,5 @@ void Grid::RenderField()
 	}
 	cout << endl;
 }
+
+/*----------------------END-------------------*/

@@ -27,7 +27,9 @@ void Cell::SetFood(bool fbFood)
 	bFood = fbFood;
 }
 
-bool Cell::isFood()
+bool Cell::isFood()	//tell this cell that it is food!
 {
 	return bFood;
 }
+
+/*----------------------END-------------------*/

@@ -17,7 +17,7 @@ public:
 public:
 	Cell(); 		//default constructor
 	Cell(int, int);	//cell constructor
-	void SetFood(bool);	//function to set bFood, called externally
+	void SetFood(bool);	//function to set bFood, called externally by grid.cpp
 	bool isFood();	//is there food on this cell?
 };
 
