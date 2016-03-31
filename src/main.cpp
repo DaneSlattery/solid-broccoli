@@ -13,7 +13,7 @@ using namespace std;
 //constants
 const int MAX_GRID_SIZE = 99;
 
-int main()
+int main(void)
 {
 	//init vars
 	int iGridWidth = 0, iGridDepth = 0;
@@ -73,7 +73,7 @@ int main()
 		break;
 	}
         //sleep(10);
-        //cout << "Ending the GUI..." << endl;
+        cout << "Ending the Program..." << endl;
         //EndGUI();
     return EXIT_SUCCESS;
 }

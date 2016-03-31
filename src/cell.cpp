@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Cell::Cell() //default constructor
+Cell::Cell(void) //default constructor
 {
 	iX = -1;
 	iY = -1;
@@ -28,7 +28,7 @@ void Cell::SetFood(bool fbFood)
 	bFood = fbFood;
 }
 
-bool Cell::isFood()	//tell this cell that it is food!
+bool Cell::isFood(void)	//tell this cell that it is food!
 {
 	return bFood;
 }

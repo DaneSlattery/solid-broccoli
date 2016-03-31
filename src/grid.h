@@ -25,13 +25,13 @@ private:
 	bool bFoodEaten;                        //is food eaten?
 	std::vector< std::vector <Cell> > v2CellArray; //2D vector for dynamic array
 public:
-	Grid();					//default constructor
+	Grid(void);				//default constructor
 	Grid(int, int);                         //Grid constructor, setting the array width and depth
-	void RandomiseFood();           	//function to randomise position of food on empty cell
-	bool isFoodPlaced();                    // has food been placed?  TODO: unused for now
-	void EatFood();                     	//FoodEaten, will add a "by whom" later string EatFood(string WhoAteMe) return WhoAteMe?
+	void RandomiseFood(void);           	//function to randomise position of food on empty cell
+	bool isFoodPlaced(void);                    // has food been placed?  TODO: unused for now
+	void EatFood(void);                     	//FoodEaten, will add a "by whom" later string EatFood(string WhoAteMe) return WhoAteMe?
 	// if I make a render class, this should go there. TODO: move into UI class
-	void RenderField();                     // display the grid in terminal.
+	void RenderField(void);                     // display the grid in terminal.
 };
 
 /*----------------------END-------------------*/

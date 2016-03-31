@@ -16,10 +16,10 @@ public:
 	int iY;   		//The co-ords of this cell 0,0 is top left
 	bool bFood;
 public:
-	Cell(); 		//default constructor
+	Cell(void); 		//default constructor
 	Cell(int, int);	//cell constructor
 	void SetFood(bool);	//function to set bFood, called externally by grid.cpp
-	bool isFood();	//is there food on this cell?
+	bool isFood(void);	//is there food on this cell?
 };
 
 

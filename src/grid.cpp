@@ -22,7 +22,7 @@ Grid::Grid(int cWidth, int cDepth) 	// init constructor
 	//cout << "Grid Constructor called, width = " << iWidth << ", depth = " << iDepth << "." << endl;
 }
 
-void Grid::RandomiseFood() 	//function to randomise position of food on empty cell
+void Grid::RandomiseFood(void) 	//function to randomise position of food on empty cell
 {
 	//init. random seed
 	srand(time(NULL));
@@ -35,12 +35,12 @@ void Grid::RandomiseFood() 	//function to randomise position of food on empty ce
 	//cout << "Food placed at: " << iFoodX << "; " << iFoodY << endl;
 }
 
-void Grid::EatFood() 		// eat the food at iFoodX and Y
+void Grid::EatFood(void) 		// eat the food at iFoodX and Y
 {
 	v2CellArray[iFoodX][iFoodY].SetFood(false);
 }
 
-void Grid::RenderField()	//render the field as below
+void Grid::RenderField(void)	//render the field as below
 /* 
 	o o o o 
    	o o o o
