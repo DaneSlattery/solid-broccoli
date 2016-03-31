@@ -6,6 +6,7 @@
 #include <sstream>	//for taking user input into vars other than string
 #include <unistd.h>	// for sleep
 #include "grid.h"	//refers to the 2D array class
+#include "userinterface.h"  //the rendering and input capture
 
 using namespace std;
 
@@ -55,20 +56,26 @@ int main()
 
 	cout << "Placing Food..." << endl;
 	newGrid.RandomiseFood();
+        
+        //cout << "Drawing GUI..." << endl;
+        //InitGUI(iGridDepth, iGridWidth);
+        
 	cout << "Initialisation Complete." << endl;
 	//init complete
 
 	//game loop here
 	while (true)
 	{
-	//	newGrid.EatFood();
+		newGrid.EatFood();
 		newGrid.RandomiseFood();
 		newGrid.RenderField();
 		sleep(1);
-//		break;
+		break;
 	}
-
-    return 0;
+        //sleep(10);
+        //cout << "Ending the GUI..." << endl;
+        //EndGUI();
+    return EXIT_SUCCESS;
 }
 
 /*----------------------END-------------------*/

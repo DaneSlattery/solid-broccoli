@@ -1,4 +1,5 @@
 //cell.h
+// the cell class defines 1 block in our grid
 
 //include guard
 #ifndef CELL_H

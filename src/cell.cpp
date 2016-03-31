@@ -1,5 +1,6 @@
 //cell.cpp
-// the cell class defines 1 block in our grid
+
+//my header
 #include "cell.h"
 
 using namespace std;

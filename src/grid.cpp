@@ -1,5 +1,6 @@
 //grid.cpp
-// the grid class is a 2D array of cells, with a variable size.
+
+//my header
 #include "grid.h"
 
 using namespace std;

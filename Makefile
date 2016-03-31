@@ -7,7 +7,7 @@ OBJECTS=$(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.cpp=.o)) #all .o files i
 BUILDDIR=build
 SRCDIR=src
 BINDIR=bin
-INC=
+INC=-lncurses
 EXEC=bin/snake
 
 all: $(EXEC)
@@ -16,7 +16,7 @@ all: $(EXEC)
 $(EXEC): $(OBJECTS)
 	@echo " Linking..."
 	@mkdir -p $(BINDIR)
-	$(CC) $^ -o $@
+	$(CC) $^ $(INC) -o  $@
 	
 #should take in all cpp files    
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
