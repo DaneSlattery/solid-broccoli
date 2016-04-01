@@ -11,15 +11,13 @@
 // the cell class defines 1 block in our grid
 class Cell
 {
+private:
+	bool bFood;             //variable to say if there is food 
+        int iStatus;            //occupation variable 0: empty, 1: food, 2: snake
 public:
-	int iX;
-	int iY;   		//The co-ords of this cell 0,0 is top left
-	bool bFood;
-public:
-	Cell(void); 		//default constructor
-	Cell(int, int);	//cell constructor
-	void SetFood(bool);	//function to set bFood, called externally by grid.cpp
-	bool isFood(void);	//is there food on this cell?
+	Cell(void);             //cell constructor
+	void SetStatus(int);	//set the status variable
+	int GetStatus(void);	//return this cells occupation status 0: empty, 1: food, 2: snake
 };
 
 

@@ -51,13 +51,12 @@ int main(void)
 			break; //all good
 	}
 
-	cout << "Creating " << iGridWidth << "*" << iGridDepth << " grid..." << endl;
 	Grid newGrid(iGridWidth,iGridDepth);
 
-	cout << "Placing Food..." << endl;
 	newGrid.RandomiseFood();
         
-        //cout << "Drawing GUI..." << endl;
+        cout << "Drawing GUI..." << endl;
+        newGrid.RenderField();
         //InitGUI(iGridDepth, iGridWidth);
         
 	cout << "Initialisation Complete." << endl;
@@ -66,11 +65,12 @@ int main(void)
 	//game loop here
 	while (true)
 	{
-		newGrid.EatFood();
-		newGrid.RandomiseFood();
+		//newGrid.EatFood();
+                newGrid.RenderField();
+		//newGrid.RandomiseFood();
 		newGrid.RenderField();
 		sleep(1);
-		break;
+		//break;
 	}
         //sleep(10);
         cout << "Ending the Program..." << endl;

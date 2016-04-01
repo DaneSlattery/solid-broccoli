@@ -5,32 +5,19 @@
 
 using namespace std;
 
-Cell::Cell(void) //default constructor
+Cell::Cell(void) //init constructor
 {
-	iX = -1;
-	iY = -1;
-	bFood = false;
-	// below is a debug call
-//	cout << "Cell Default Constructor called, location " << iX << ", " << iY << ". Food? " << bFood << endl;
+    iStatus = 0;            //empty cell
 }
 
-Cell::Cell(int cx, int cy) //init constructor
+void Cell::SetStatus(int fiStatus)
 {
-	iX = cx;
-	iY = cy;
-	bFood = false;
-	// below is a useful debug call
-//	cout << iX << "," << iY << " ";
+    iStatus = fiStatus;
 }
 
-void Cell::SetFood(bool fbFood)
+int Cell::GetStatus(void)
 {
-	bFood = fbFood;
-}
-
-bool Cell::isFood(void)	//tell this cell that it is food!
-{
-	return bFood;
+    return iStatus;
 }
 
 /*----------------------END-------------------*/
