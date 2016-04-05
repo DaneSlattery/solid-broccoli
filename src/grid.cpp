@@ -15,16 +15,18 @@ Grid::Grid(int cWidth, int cDepth) 	// init constructor
     iDepth = cDepth;
     
     cout << "Creating " << cWidth << "*" << cDepth << " grid..." << endl;
-
+	
+	//thanks rowan.
+	v2CellArray = vector<vector<Cell>>(iWidth);
     for (int row = 0; row < iWidth; row++)
     {
-        v2CellArray.push_back(std::vector<Cell>());
+        v2CellArray[row] = vector<Cell>(iDepth);
         for (int column = 0; column < iDepth; column++)
         {
-                v2CellArray[row].push_back(Cell());
+                v2CellArray[row][column] = Cell();
                 ostringstream ss;
                 ss << row << "," << column;
-                vEmptyArray.push_back(ss.str());      
+                vEmptyArray[row*10 + column] = ss.str();      
         }
     }
 }
