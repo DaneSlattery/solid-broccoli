@@ -14,19 +14,24 @@ Grid::Grid(int cWidth, int cDepth) 	// init constructor
     iWidth = cWidth;
     iDepth = cDepth;
     
+	int iListCounter = 0;		//move to header
+
     cout << "Creating " << cWidth << "*" << cDepth << " grid..." << endl;
 	
 	//thanks rowan.
-	v2CellArray = vector<vector<Cell>>(iWidth);
+	v2CellArray = vector< vector< Cell > >(iWidth, vector<Cell>(iDepth));
+	vEmptyArray.resize(iWidth * iDepth);			//make the empty array of strings big enough
     for (int row = 0; row < iWidth; row++)
     {
-        v2CellArray[row] = vector<Cell>(iDepth);
+       // v2CellArray[row] = vector<Cell>(iDepth);
         for (int column = 0; column < iDepth; column++)
         {
                 v2CellArray[row][column] = Cell();
-                ostringstream ss;
+                ostringstream ss;		//move to header
                 ss << row << "," << column;
-                vEmptyArray[row*10 + column] = ss.str();      
+		cout << ss.str() << endl;
+                vEmptyArray[iListCounter] = ss.str();
+		iListCounter++;     
         }
     }
 }
@@ -41,7 +46,7 @@ void Grid::RandomiseFood(void) 	//function to randomise position of food on empt
     //generate random position in empty cells to assign the food to
     iRandValue = rand() % vEmptyArray.size();   // from 0 to number of empty cells
      
-    stringstream s;
+    stringstream s;				//move to header when ready
     s << vEmptyArray[iRandValue];
     
     s >> iFoodX;                                //extract the first integer
@@ -57,7 +62,7 @@ void Grid::RandomiseFood(void) 	//function to randomise position of food on empt
 
 void Grid::EatFood(void) 		// eat the food at iFoodX and Y
 {
-    v2CellArray[iFoodX][iFoodY].SetStatus(SNAKE); // for the food to be eaten, there will have to be a snake there
+    v2CellArray[iFoodX][iFoodY].SetStatus(SNAKE); // for the food to be eaten, there would have to be a snake there
     RandomiseFood();                              // place new food
 }
 
