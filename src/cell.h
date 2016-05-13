@@ -12,12 +12,12 @@
 class Cell
 {
 private:
-	bool bFood;             //variable to say if there is food 
-        int iStatus;            //occupation variable 0: empty, 1: food, 2: snake
+    bool bFood;             //variable to say if there is food 
+    int iStatus;            //occupation variable 0: empty, 1: food, 2: snake
 public:
-	Cell(void);             //cell constructor
-	void SetStatus(int);	//set the status variable
-	int GetStatus(void);	//return this cells occupation status 0: empty, 1: food, 2: snake
+    Cell(void);             //cell constructor
+    void SetStatus(int);	//set the status variable
+    int GetStatus(void);	//return this cells occupation status 0: empty, 1: food, 2: snake
 };
 
 

@@ -22,33 +22,33 @@ int main(void)
 	//input capture
 	while (true)
 	{
-		cout << "Enter Grid Width: ";
-		getline(cin, input);
-		stringstream(input) >> iGridWidth;
-		cout << "Enter Grid Depth: ";
-		getline(cin, input);
-		stringstream(input) >> iGridDepth;
-		//error handling 
-		//(floating point exception in random number generator)
-		if (iGridWidth <= 0)
-		{
-			cout << "Invalid Entry for Width." << endl;
-		} 
-		else if (iGridDepth <= 0)
-		{
-			cout << "Invalid Entry for Height." << endl;
-		} 
-		//fairly slow computer, don't want to hurt her. I'm sure you can change these
-		else if (iGridWidth > MAX_GRID_SIZE)
-		{
-			cout << "Width is dangerously large." << endl;
-		}
-		else if (iGridDepth > MAX_GRID_SIZE)
-		{
-			cout << "Depth is dangerously large." << endl;
-		}
-		else 
-			break; //all good
+            cout << "Enter Grid Width: ";
+            getline(cin, input);
+            stringstream(input) >> iGridWidth;
+            cout << "Enter Grid Depth: ";
+            getline(cin, input);
+            stringstream(input) >> iGridDepth;
+            //error handling 
+            //(floating point exception in random number generator)
+            if (iGridWidth <= 0)
+            {
+                cout << "Invalid Entry for Width." << endl;
+            } 
+            else if (iGridDepth <= 0)
+            {
+                cout << "Invalid Entry for Height." << endl;
+            } 
+            //fairly slow computer, don't want to hurt her. I'm sure you can change these
+            else if (iGridWidth > MAX_GRID_SIZE)
+            {
+                cout << "Width is dangerously large." << endl;
+            }
+            else if (iGridDepth > MAX_GRID_SIZE)
+            {
+                cout << "Depth is dangerously large." << endl;
+            }
+            else 
+                break; //all good
 	}
 
 	Grid myGrid(iGridWidth, iGridDepth);
@@ -65,13 +65,13 @@ int main(void)
 	//game loop here
 	while (true)
 	{
-		myGrid.EatFood();
-        myGrid.RenderField();
-        sleep(1);
-		myGrid.RandomiseFood();
-		myGrid.RenderField();
-		sleep(1);
-		//break;
+            myGrid.EatFood();
+            myGrid.RenderField();
+            sleep(1);
+            myGrid.RandomiseFood();
+            myGrid.RenderField();
+            sleep(1);
+            //break;
 	}
         //sleep(10);
         cout << "Ending the Program..." << endl;

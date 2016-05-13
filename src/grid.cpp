@@ -4,9 +4,8 @@
 #include "grid.h"
 
 using namespace std;
-
-#define FOOD 1
 #define EMPTY 0
+#define FOOD 1
 #define SNAKE 2 // the values to fill the cell status variable
 
 Grid::Grid(int cWidth, int cDepth) 	// init constructor
@@ -26,12 +25,12 @@ Grid::Grid(int cWidth, int cDepth) 	// init constructor
        // v2CellArray[row] = vector<Cell>(iDepth);
         for (int column = 0; column < iDepth; column++)
         {
-                v2CellArray[row][column] = Cell();
-                ostringstream ss;		//move to header
-                ss << row << "," << column;
-		cout << ss.str() << endl;
-                vEmptyArray[iListCounter] = ss.str();
-		iListCounter++;     
+            v2CellArray[row][column] = Cell();
+            ostringstream ss;		//move to header
+            ss << row << "," << column;
+            cout << ss.str() << endl;
+            vEmptyArray[iListCounter] = ss.str();
+            iListCounter++;     
         }
     }
 }
@@ -77,16 +76,16 @@ void Grid::RenderField(void)	//render the field as below
 {
 	for (int i = 0; i < iWidth; i++)
 	{
-		cout << endl;
-		for (int j = 0; j < iDepth; j++)
-		{
-                    if (v2CellArray[i][j].GetStatus() == FOOD)
-                        cout << "x ";
-                    else if (v2CellArray[i][j].GetStatus() == SNAKE)
-                        cout << "# ";
-                    else
-                        cout << "o "; 
-		}
+            cout << endl;
+            for (int j = 0; j < iDepth; j++)
+            {
+                if (v2CellArray[i][j].GetStatus() == FOOD)
+                    cout << "x ";
+                else if (v2CellArray[i][j].GetStatus() == SNAKE)
+                    cout << "# ";
+                else
+                    cout << "o "; 
+            }
 	}
 	cout << endl;
 }
