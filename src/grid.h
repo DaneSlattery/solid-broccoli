@@ -22,14 +22,14 @@ private:
 	int iDepth;				//depth of playing field
 	int iFoodX;                             //
 	int iFoodY;				//where the food is
-        int iRandValue;                         //the random position in the empty vector to use;
+    int iRandValue;                         //the random position in the empty vector to use;
 	bool bFoodPlaced;                       //is food placed?
 	bool bFoodEaten;                        //is food eaten?
 	std::vector< std::vector <Cell> > v2CellArray; //2D vector for dynamic array
         std::vector<std::string> vEmptyArray;          //vector of empty cells, eg. 0,1 is 0x, 1y
 public:
 	Grid(void);				//default constructor
-	Grid(int, int);                         //Grid constructor, setting the array width and depth
+	Grid(int, int);                     //Grid constructor, setting the array width and depth
 	void RandomiseFood(void);           	//function to randomise position of food on empty cell
         
 	bool isFoodPlaced(void);                // has food been placed?  TODO: unused for now
