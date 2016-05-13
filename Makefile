@@ -8,7 +8,7 @@ BUILDDIR=build
 SRCDIR=src
 BINDIR=bin
 INC=-lncurses
-EXEC=bin/snake
+EXEC=$(BINDIR)/snake
 
 all: $(EXEC)
 
@@ -26,5 +26,5 @@ $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
     
 clean: 
 	@echo " Cleaning..."
-	rm -r $(BUILDDIR) $(EXEC)
+	rm -r $(BUILDDIR) $(EXEC) $(BINDIR) || true
     

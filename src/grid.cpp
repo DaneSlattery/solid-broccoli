@@ -42,22 +42,23 @@ void Grid::RandomiseFood(void) 	//function to randomise position of food on empt
     
     //init. random seed
     srand(time(NULL)); 
-    
-    //generate random position in empty cells to assign the food to
-    iRandValue = rand() % vEmptyArray.size();   // from 0 to number of empty cells
-     
-    stringstream s;				//move to header when ready
-    s << vEmptyArray[iRandValue];
-    
-    s >> iFoodX;                                //extract the first integer
-    s.ignore();                                 //ignore the comma
-    s >> iFoodY;                                //extract second integer
+    if (vEmptyArray.size() != 0)
+    {
+        //generate random position in empty cells to assign the food to
+        iRandValue = rand() % vEmptyArray.size();   // from 0 to number of empty cells
+         
+        stringstream s;				//move to header when ready
+        s << vEmptyArray[iRandValue];
+        
+        s >> iFoodX;                                //extract the first integer
+        s.ignore();                                 //ignore the comma
+        s >> iFoodY;                                //extract second integer
 
-    v2CellArray[iFoodX][iFoodY].SetStatus(FOOD);//set the cell to contain food
-    vEmptyArray.erase(vEmptyArray.begin() + iRandValue);    //that cell is no longer empty!   
-   
-    cout << "Food placed at: " << iFoodX << "; " << iFoodY << endl;
-
+        v2CellArray[iFoodX][iFoodY].SetStatus(FOOD);//set the cell to contain food
+        vEmptyArray.erase(vEmptyArray.begin() + iRandValue);    //that cell is no longer empty!   
+       
+        cout << "Food placed at: " << iFoodX << "; " << iFoodY << endl;
+    }
 }
 
 void Grid::EatFood(void) 		// eat the food at iFoodX and Y
