@@ -7,17 +7,17 @@ using namespace std;
 
 Cell::Cell(void) //init constructor
 {
-    iStatus = 0;            //empty cell
+    m_iStatus = 0;            //empty cell
 }
 
 void Cell::SetStatus(int fiStatus)
 {
-    iStatus = fiStatus;
+    m_iStatus = fiStatus;
 }
 
 int Cell::GetStatus(void)
 {
-    return iStatus;
+    return m_iStatus;
 }
 
 /*----------------------END-------------------*/
